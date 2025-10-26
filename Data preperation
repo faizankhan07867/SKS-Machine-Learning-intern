@@ -1,0 +1,41 @@
+#source code
+
+  # ----------------- TASK 1: DATA PREPARATION -----------------
+
+import pandas as pd
+import numpy as np
+
+# Load dataset
+df = pd.read_csv("Telco-Customer-Churn.csv")
+print("Shape:", df.shape)
+print(df.head())
+
+# Drop identifier column
+df.drop('customerID', axis=1, inplace=True)
+
+# Convert TotalCharges to numeric (handle spaces as NaN)
+df['TotalCharges'] = pd.to_numeric(df['TotalCharges'].replace(" ", np.nan), errors='coerce')
+
+# Fill missing numeric values with median
+df['TotalCharges'].fillna(df['TotalCharges'].median(), inplace=True)
+
+# Encode target variable
+df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
+
+# Convert 'Yes/No' type columns to 1/0
+binary_cols = [col for col in df.columns if df[col].nunique() == 2 and df[col].dtype == 'object']
+for col in binary_cols:
+    df[col] = df[col].map({'Yes': 1, 'No': 0})
+
+# One-hot encode remaining categorical columns
+df = pd.get_dummies(df, drop_first=True)
+
+print("\n✅ Data preparation completed. Final shape:", df.shape)
+print(df.head())
+
+#Expected output:
+    
+    Shape: (7043, 21)
+✅ Data preparation completed. Final shape: (7043, 30)
+
+
