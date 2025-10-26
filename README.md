@@ -421,7 +421,9 @@ pip package manager
 Jupyter Notebook
 2GB free disk space
 Step 1: Clone Repository
-git clone https://github.com/yourusername/customer-churn-analysis.git
+git clone :-
+ https://github.com/faizankhan07867/SKS-Machine-Learning-intern
+
 cd customer-churn-analysis
 Step 2: Create Virtual Environment (Recommended)
 # Windows
@@ -431,6 +433,7 @@ venv\Scripts\activate
 # macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
+
 Step 3: Install Dependencies
 pip install -r requirements.txt
 requirements.txt:
@@ -440,8 +443,10 @@ scikit-learn==1.2.2
 matplotlib==3.7.1
 jupyter==1.0.0
 seaborn==0.12.2
+
 Step 4: Launch Jupyter Notebook
 jupyter notebook
+
 Step 5: Open Project Notebook
 Navigate to Customer_Churn_Analysis.ipynb and run all cells.
 🚀 Usage
@@ -461,7 +466,9 @@ model.fit(X_train_scaled, y_train)
 # Save model
 with open('customer_churn_model.pkl', 'wb') as f:
     pickle.dump(model, f)
+
 2. Making Predictions
+
 import pickle
 
 # Load saved model and scaler
@@ -485,7 +492,9 @@ print(f"Churn Risk: {churn_probability[0]:.2%}")
 # Get prediction
 prediction = model.predict(new_customer_scaled)
 print(f"Prediction: {'Will Churn' if prediction[0] == 1 else 'Will Stay'}")
+
 3. Batch Predictions
+
 # Load customer database
 customers = pd.read_csv('customer_database.csv')
 
@@ -505,6 +514,7 @@ customers['risk_category'] = pd.cut(
 )
 
 # Export high-risk customers
+
 high_risk = customers[customers['risk_category'] == 'High']
 high_risk.to_csv('high_risk_customers.csv', index=False)
 📈 Results
@@ -547,26 +557,34 @@ XXX
 Potential Revenue at Risk
 $XXX,XXX
 🔮 Future Enhancements
+
 Phase 1: Model Improvements (Short-term)
+
 [ ] Implement XGBoost and LightGBM models
 [ ] Add hyperparameter tuning with GridSearchCV
 [ ] Implement cross-validation for robust evaluation
 [ ] Add SMOTE for handling class imbalance
 [ ] Feature selection using recursive feature elimination
+
 Phase 2: Advanced Analytics (Medium-term)
+
 [ ] Time-series analysis for churn trends
 [ ] Customer segmentation using clustering
 [ ] Survival analysis for customer lifetime
 [ ] Sentiment analysis from customer feedback
 [ ] A/B testing framework for interventions
+
 Phase 3: Deployment (Long-term)
+
 [ ] Build REST API using Flask/FastAPI
 [ ] Deploy on cloud platform (AWS/Azure/GCP)
 [ ] Create real-time prediction dashboard with Streamlit
 [ ] Implement automated model retraining pipeline
 [ ] Add monitoring and alerting system
 [ ] Build mobile app for field teams
+
 Phase 4: Production Features
+
 [ ] Multi-model ensemble voting
 [ ] Explainable AI with SHAP values
 [ ] Integration with CRM systems
@@ -609,6 +627,7 @@ customer-churn-analysis/
 Contributions are welcome! Please follow these guidelines:
 How to Contribute
 Fork the Repository
+
 # Click "Fork" button on GitHub
 Create Feature Branch
 git checkout -b feature/AmazingFeature
