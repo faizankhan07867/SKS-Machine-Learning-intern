@@ -1,0 +1,22 @@
+# Source code of feature selection.
+
+
+# ----------------- TASK 3: FEATURE SELECTION -----------------
+from sklearn.feature_selection import SelectKBest, mutual_info_classif
+
+# Use mutual information for mixed data types
+selector = SelectKBest(score_func=mutual_info_classif, k=12)
+selector.fit(X_train, y_train)
+
+selected_features = X_train.columns[selector.get_support()].tolist()
+print("Top 12 selected features:")
+print(selected_features)
+
+
+#Expected output:
+
+Top 12 selected features:
+['tenure', 'MonthlyCharges', 'TotalCharges', 'Contract_Two year',
+ 'InternetService_Fiber optic', 'PaymentMethod_Electronic check',
+ 'TechSupport_No', 'OnlineSecurity_No', 'MultipleLines_No',
+ 'DeviceProtection_No', 'PaperlessBilling', 'Dependents']
