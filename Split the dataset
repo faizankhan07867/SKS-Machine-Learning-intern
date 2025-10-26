@@ -1,0 +1,22 @@
+# Source code of split the dataset.
+
+# ----------------- TASK 2: SPLIT DATASET -----------------
+from sklearn.model_selection import train_test_split
+
+# Separate input and target
+X = df.drop('Churn', axis=1)
+y = df['Churn']
+
+# Split data (stratified to maintain churn ratio)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+print("Train shape:", X_train.shape, "Test shape:", X_test.shape)
+print("Churn rate in train:", y_train.mean().round(3), " | in test:", y_test.mean().round(3))
+
+
+#Expected output:
+
+Train shape: (5634, 29) Test shape: (1409, 29)
+Churn rate in train: 0.265 | in test: 0.265
