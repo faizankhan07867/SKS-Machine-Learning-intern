@@ -649,7 +649,11 @@ furnished to do so, subject to the following conditions:
 📞 Contact
 [Faizan khan]
 📧 Email: faijankha7860@gmail.com
+
 💼 LinkedIn: https://www.linkedin.com/in/faizan-khan-b8270a287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+
 🐙 GitHub: @faizankhan07867
+
 🐦 Twitter: @https://x.com/FaizanKhan84164?t=9eQUMoB-Jd025zhbYeqsnw&s=09
-Project Link: 
+
+Project Link: https://github.com/faizankhan07867/SKS-Machine-Learning-intern
